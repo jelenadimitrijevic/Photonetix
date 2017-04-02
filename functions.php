@@ -44,3 +44,15 @@ function authorizeUsers($username, $password, $user) {
 
     return false;
 }
+ 
+function searchUser ($keyword) {
+
+	$users = getUsers();
+	foreach ($users as $user) {
+		if ($user->username === $keyword) {
+			return true;
+		}
+	}
+	
+	return false;
+}

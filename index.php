@@ -2,7 +2,7 @@
 
 include 'functions.php';
 
-if (isset($_SESSION['login'])) {
+if (!isset($_SESSION['login'])) {
     $_SESSION['login'] = false;
 }
 ?>
@@ -37,4 +37,12 @@ if (isset($_GET['msg']) && strlen($_GET['msg']) > 0) {
 </body>
 </html>
 
+
+CREATE TABLE `skolica`.`user` 
+( 
+`userId` INT(10) NOT NULL AUTO_INCREMENT , 
+`username` VARCHAR(32) NOT NULL , 
+`password` VARCHAR(32) NOT NULL 
+) 
+ENGINE = InnoDB CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
